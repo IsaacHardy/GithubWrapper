@@ -4,7 +4,8 @@
   "description": "A simple node wrapper for the Github API",
   "main": "app.js",
   "dependencies": {
-    "express": "^4.13.1",
+    "express": "~3.3.4",
+    "jade": "~0.34.0",
     "request": "^2.58.0"
   },
   "devDependencies": {},
