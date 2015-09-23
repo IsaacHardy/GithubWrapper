@@ -85,6 +85,21 @@ app.get('/repos/:username', function (req, res, next) {
 });
 // end API endpoints
 
+// GET Org Members
+app.get('/orgs/:org/members', function (req, res, next) {
+  var url = githubURL + 'orgs/' + req.params.org + '/members/';
+  request({ url: url, headers: githubHeaders },
+    function (error, response, body) {
+      if (!error && response.statusCode == 200) {
+        res.setHeader('Content-Type', 'application/json');
+        res.send(body);
+      }
+    }
+  );
+});
+
+
+
 // run the server
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));
