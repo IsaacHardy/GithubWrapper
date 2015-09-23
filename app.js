@@ -87,7 +87,7 @@ app.get('/repos/:username', function (req, res, next) {
 
 // GET Org Members
 app.get('/orgs/:org/members', function (req, res, next) {
-  var url = githubURL + 'orgs/' + req.params.org + '/members/';
+  var url = githubURL + 'orgs/' + req.params.org + '/members';
   request({ url: url, headers: githubHeaders },
     function (error, response, body) {
       if (!error && response.statusCode == 200) {
